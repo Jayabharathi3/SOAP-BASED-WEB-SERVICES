@@ -69,8 +69,170 @@ To create SOAP-based web services using both server-side and client-side impleme
    - Follow steps 1-2 as in the client-side section.
    - Select `WSDL URL` and type the URL of the web service’s WSDL file (e.g., `http://ip:8080/Proj_name/Webservice_name?wsdl`).
    - Complete the remaining procedure as outlined.
+  
+## Program 
+### SERVER:
+**Calservice**
+```java
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package example;
+
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+
+/**
+ *
+ * @author SEC
+ */
+@WebService(serviceName = "Calservice")
+public class Calservice {
+
+    /**
+     * This is a sample web service operation
+     */
+    @WebMethod(operationName = "hello")
+    public String hello(@WebParam(name = "name") String txt) {
+        return "Hello " + txt + " !";
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "AddNumbers")
+    public Integer AddNumbers(@WebParam(name = "num1") int num1, @WebParam(name = "num2") int num2) {
+        //TODO write your implementation code here:
+        return (num1 + num2);
+    }
+}
+```
+### CLIENT 
+**index.html**
+```html
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Service Client</title>
+    </head>
+    <body>
+        <h1>Addition Web Service</h1>
+        
+        <!-- Form for user input -->
+        <form method="post" action="index.jsp">
+            <label for="num1">Number 1:</label>
+            <input type="number" id="num1" name="num1" required><br><br>
+            
+            <label for="num2">Number 2:</label>
+            <input type="number" id="num2" name="num2" required><br><br>
+            
+            <label for="message">Enter a String:</label>
+            <input type="text" id="message" name="message" required><br><br>
+
+            <input type="submit" value="Add and Send String">
+        </form>
+    </body>
+</html>
+```
+**index.jsp**
+
+```
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Output Page</title>
+    </head>
+    <body>
+        <h1>Web Service Client - Result</h1>
+
+        <%-- Retrieve form values --%>
+        <%
+            String num1Str = request.getParameter("num1");
+            String num2Str = request.getParameter("num2");
+            String message = request.getParameter("message");
+
+            int num1 = 0;
+            int num2 = 0;
+            String resultStr = "";
+            String responseMessage = "";
+
+            try {
+                // Convert numbers from string to integer
+                if (num1Str != null && num2Str != null) {
+                    num1 = Integer.parseInt(num1Str);
+                    num2 = Integer.parseInt(num2Str);
+                }
+
+                // Call the web service to add numbers
+                example.Calservice_Service service = new example.Calservice_Service();
+                example.Calservice port = service.getCalservicePort();
+
+                // Web service call for addition
+                int result = port.addNumbers(num1, num2);
+                resultStr = " " + result;
+
+                // Web service call for string message
+                if (message != null && !message.isEmpty()) {
+                    responseMessage = port.hello(message);
+                }
+
+            } catch (Exception e) {
+                resultStr = "Error: " + e.getMessage();
+            }
+        %>
+
+        <%-- Display the result for addition --%>
+        <p><b>Result of Addition:</b> <%= resultStr %></p>
+
+        <%-- Display the response message from the web service --%>
+        <p><b>Response from Web Service :</b> <%= responseMessage %></p>
+
+    </body>
+</html>
+```
+
+## Output
+
+### Server-Side Implementation
+**Server-Side Terminal**
+![image](https://github.com/user-attachments/assets/951d31c0-e17a-4fe4-a043-8cdb31959e00)
+
+**Server-side output page**
+![image](https://github.com/user-attachments/assets/beb5f650-49a9-4b74-ac68-bbe31ada55c4)
+
+![image](https://github.com/user-attachments/assets/42ae4f0f-2c8b-4c51-a25d-20975e3ccab4)
+
+![image](https://github.com/user-attachments/assets/f63fd66b-a16e-4070-b880-cb47a2f624a3)
+
+
+**WSDL file**
+![image](https://github.com/user-attachments/assets/5cb950d8-fa88-4152-b96b-8c5ad548efc7)
+
+### Client-Side Implementation
+
+**Client-side Terminal**
+![image](https://github.com/user-attachments/assets/5e3aea18-cc9f-4f3c-96c8-d2e7ebc3a283)
+
+**Client-side output page**
+![image](https://github.com/user-attachments/assets/038b6df8-e11c-4e6c-b529-2922cc25b26c)
+
+![image](https://github.com/user-attachments/assets/c923e1e1-35a6-4c06-bb2f-e0a74cbd0eb9)
+
 
 ## Result
-
 The SOAP-based web services were successfully created and executed, demonstrating both server-side and client-side implementations.
 
