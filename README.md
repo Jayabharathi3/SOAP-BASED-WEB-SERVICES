@@ -228,19 +228,17 @@ and open the template in the editor.
 ![image](https://github.com/user-attachments/assets/f63fd66b-a16e-4070-b880-cb47a2f624a3)
 
 
-### **WSDL file**
-![image](https://github.com/user-attachments/assets/a7d75e32-741c-424d-b3e2-5ce50e98b290)
 
 # Client-Side Implementation
 
 ### **Client-side Terminal**
-![image](https://github.com/user-attachments/assets/5e3aea18-cc9f-4f3c-96c8-d2e7ebc3a283)
+![image](https://github.com/user-attachments/assets/cc928dc3-3c72-4173-8101-9d33eb003f45)
 
 ### **Client-side output page**
 
-![image](https://github.com/user-attachments/assets/038b6df8-e11c-4e6c-b529-2922cc25b26c)
+![image](https://github.com/user-attachments/assets/b272bdfe-1ffb-496a-ad71-f5711879ab0c)
 
-![image](https://github.com/user-attachments/assets/c923e1e1-35a6-4c06-bb2f-e0a74cbd0eb9)
+![image](https://github.com/user-attachments/assets/dd53c739-6f77-43b5-8d8c-c07b2b4eb9f5)
 
 
 ## Result
