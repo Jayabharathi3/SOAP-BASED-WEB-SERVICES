@@ -210,33 +210,36 @@ and open the template in the editor.
 </html>
 ```
 
-## Output
+# Output
 
-### Server-Side Implementation
+## Server-Side Implementation
 
-**Server-Side Terminal**
+### **Server-Side Terminal**
 ![image](https://github.com/user-attachments/assets/951d31c0-e17a-4fe4-a043-8cdb31959e00)
 
-**Server-side output page**
-**Input page**
+## **Server-side output pages**
+### **Input page**
 ![image](https://github.com/user-attachments/assets/beb5f650-49a9-4b74-ac68-bbe31ada55c4)
 
-**Addition output**
+### **Addition output**
 ![image](https://github.com/user-attachments/assets/42ae4f0f-2c8b-4c51-a25d-20975e3ccab4)
 
-**String output**
+### **String output**
 ![image](https://github.com/user-attachments/assets/f63fd66b-a16e-4070-b880-cb47a2f624a3)
 
 
-**WSDL file**
+### **WSDL file**
 ![image](https://github.com/user-attachments/assets/a7d75e32-741c-424d-b3e2-5ce50e98b290)
 
-### Client-Side Implementation
+# Client-Side Implementation
 
-**Client-side Terminal**
+### **Client-side Terminal**
 ![image](https://github.com/user-attachments/assets/5e3aea18-cc9f-4f3c-96c8-d2e7ebc3a283)
-**Client-side output page**
+
+### **Client-side output page**
+
 ![image](https://github.com/user-attachments/assets/038b6df8-e11c-4e6c-b529-2922cc25b26c)
+
 ![image](https://github.com/user-attachments/assets/c923e1e1-35a6-4c06-bb2f-e0a74cbd0eb9)
 
 
